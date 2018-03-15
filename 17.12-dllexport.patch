@@ -1,0 +1,13 @@
+DEFINE_SYMBOL cannot be used with generate_export_header()
+
+--- origsrc/palapeli-17.12.3/libpala/CMakeLists.txt	2017-12-30 22:26:27.000000000 -0600
++++ src/palapeli-17.12.3/libpala/CMakeLists.txt	2018-03-14 17:16:12.277363500 -0500
+@@ -34,7 +34,7 @@ target_link_libraries(pala KF5::I18n Qt5
+ set_target_properties(pala PROPERTIES
+ 	VERSION ${libpala_VERSION}
+ 	SOVERSION ${libpala_SOVERSION}
+-	DEFINE_SYMBOL MAKE_LIBPALA
++	COMPILE_DEFINITIONS MAKE_LIBPALA
+ )
+ 
+ install(TARGETS pala EXPORT pala-targets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
